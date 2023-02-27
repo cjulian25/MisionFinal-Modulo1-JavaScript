@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script defer src="./MisionFinalModulo1.js"> </script>
+
+    <style>
+        table,
+        th,
+        tr,
+        td {
+            border: solid 1px black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <br><br><br><br>
+    <center>
+
+        RANKING
+        <br><br>
+
+        Tabla de Rankings: <select id="opciones">
+            <option value=""></option>
+            <option value="opcion1">Visualizar Ranking</option>
+            <option value="opcion2">Visualizar Ranking Actualizado</option>
+            <option value="opcion3">Visualizar el ranking de forma inversa</option>
+            <option value="opcion4">Visualizar Promedio de todos los participantes</option>
+            <option value="opcion5">Visualizar Participantes con mas de 50 puntos</option>
+            <option value="opcion6">Visualizar tabla del ranking con el comodin</option>
+            <option value="opcion7">Acerca de</option>
+            </select>
+        
+        <button id="aceptar" disabled> Aceptar </button>
+        <br><br>
+        <button id="limpiar" disabled> Buscar nuevamente en la tabla </button>
+        <br><br><br><br>
+    <div id="pantalla"></div>
+</center>
+</body>
+</html>
