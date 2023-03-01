@@ -3,7 +3,6 @@ const selectOpciones = document.getElementById("opciones")
 let contenido = ""
 let bandera1 = 0
 let bandera2 = 0
-let contador = 0
 
 const ranking = [{ nombre: "Leidy", puntos: 80 }, { nombre: "Andrea", puntos: 63 }, { nombre: "Valentina", puntos: 55 }, { nombre: "Sergio", puntos: 42 }, { nombre: "Ronald", puntos: 38 }, { nombre: "Luis", puntos: 30 }]
 const ranking_Actualizado = [] //Es una copia del ranking actual pero con los nuevos datos
@@ -57,6 +56,7 @@ aceptar.addEventListener("click", () => {
                     nombre: "Yanires",
                     puntos: 93
                 })
+            }
 
                 ranking_Actualizado.sort((a, b) => b.puntos - a.puntos)
 
@@ -65,19 +65,20 @@ aceptar.addEventListener("click", () => {
                     contenido += `<tr><td> ${element.nombre} </td><td> ${element.puntos} </td>`
 
                 })
+            
 
                 contenido += `</table>`
                 document.getElementById("pantalla").innerHTML = contenido
 
-                bandera2 = 1
-            }
-
+                bandera2 = 1            
+            
         } else {
             alert("Primero debes visualizar el ranking")
         }
+
     } else if (selectOpciones.value == "opcion3") {
 
-        if (bandera1 == 0 && bandera2 == 0) {
+        if (bandera1 == 0 || bandera2 == 0) {
             alert("Primero debes visualizar el ranking y actualizarlo")
         } else {
             ranking_Actualizado.sort((a, b) => a.puntos - b.puntos)
@@ -90,9 +91,10 @@ aceptar.addEventListener("click", () => {
             contenido += `</table>`
             document.getElementById("pantalla").innerHTML = contenido
         }
+
     } else if (selectOpciones.value == "opcion4") {
 
-        if (bandera1 == 0 && bandera2 == 0) {
+        if (bandera1 == 0 || bandera2 == 0) {
             alert("Primero debes visualizar el ranking y actualizarlo")
         } else {
 
@@ -105,10 +107,12 @@ aceptar.addEventListener("click", () => {
 
             document.getElementById("pantalla").innerHTML = `<table style="background-color:#90c3f7"><th>  El promedio de puntos de todos los participantes es de ${promedio.toFixed(2)}  </th></table>`
         }
+
     } else if (selectOpciones.value == "opcion5") {
 
         if (ranking_Puntajes <= 6) {
-            if (bandera1 == 0 && bandera2 == 0) {
+
+            if (bandera1 == 0 || bandera2 == 0) {
                 alert("Primero debes visualizar el ranking y actualizarlo")
             } else {
 
@@ -122,7 +126,8 @@ aceptar.addEventListener("click", () => {
                         })
                     }
                 }
-
+            }
+        }
                 ranking_Puntajes.sort((a, b) => b.puntos - a.puntos)
 
                 contenido = `<table><th>NOMBRES</th><th>PUNTAJE</th>`
@@ -131,11 +136,10 @@ aceptar.addEventListener("click", () => {
                 })
                 contenido += `</table>`
                 document.getElementById("pantalla").innerHTML = contenido
-            }
-        }
+
     } else if (selectOpciones.value == "opcion6") {
 
-        if (bandera1 == 0 && bandera2 == 0) {
+        if (bandera1 == 0 || bandera2 == 0) {
             alert("Primero debes visualizar el ranking y actualizarlo")
         } else {
 
